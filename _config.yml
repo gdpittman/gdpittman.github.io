@@ -15,9 +15,9 @@
 # in the templates via {{ site.myvariable }}.
 title: Gregory Pittman
 author: Gregory Pittman
-description: Minimal, responsive Jekyll theme for hackers.
-baseurl: "/whiteglass" # the subpath of your site, e.g. /blog
-url: "https://yous.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+description: Choral music educator, Conductor, Professional musician
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://gdpittman.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 lang: en
 timezone: UTC
 exclude:
