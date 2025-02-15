@@ -159,11 +159,35 @@
       <p>Mr. Pittman maintains an active performance schedule and has performed in many spectacular venues, including New York City’s Carnegie Hall and Lincoln Center for the Performing Arts; Bethlehem, Palestine, where he performed Handel’s <i>Messiah</i> on Christmas Eve; and choral residencies at <a href="https://www.canterbury-cathedral.org" title="Canterbury Cathedral">Canterbury Cathedral</a> and <a href="https://www.westminster-abbey.org/visit-us" title="Westminster Abbey">Westminster Abbey</a>. He is a Principal Tenor for <a title="The King’s Counterpoint" href="https://www.thekingscounterpoint.com">The King’s Counterpoint</a>, a choral ensemble based in Charleston, South Carolina, and is on the choral staff of Charleston’s historic Old St. Andrew's Parish Church. He has also appeared with other professional ensembles, including Cantores Charleston, the Taylor Festival Choir, and the Cecilia Ensemble. Aside from academic music, Mr. Pittman has performed backup vocals for Andy Williams, Lori Morgan, and Charlie Daniels.</p>
       <p>Mr. Pittman’s other interests include the study and practice of leadership, productivity, and parliamentary procedure. He received the Distinguished Scouter Award for leadership in the Boy Scouts of America and was, at one time, a Dixie Youth baseball umpire.</p>
       <p>Mr. Pittman holds a Bachelor of Music degree in music education, a Master of Music degree in conducting, and a Master of Education degree in educational administration and supervision. He is certified in non-violent crisis intervention. He also holds micro-credentials in instructional coaching. His professional memberships include the South Carolina Association of School Administrators, ASCD (formerly Association for Supervision and Curriculum Development), the American Choral Directors Association, and the South Carolina Music Educators Association. He has extensive additional studies in psychology and counseling.</p>
-<!-- BELOW SHOULD BE STANDARD -->
+<!-- DO NOT EDIT BELOW -->
     </main>
-    <footer class="small pt-5 my-5 text-body-secondary border-top">
-      &copy; 2001-<script>document.write(new Date().getFullYear());</script> by Gregory Pittman &middot; <a href="https://social.lol/@gdp" title="Mastodon" title="Mastodon"><i class="fa-brands fa-mastodon"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://bsky.app/profile/gpittman.bsky.social" title="Bluesky"><i class="fa-brands fa-bluesky"></i></a><br><a href="https://gregorypittman.net/colophon.html" title="Colophon">Colophon</a> &middot; Verification: <a href="https://proven.lol/35cc5c" title="Verification">proven35cc5c</a>
-    </footer>
+    <!-- Include footer -->
+    <div w3-include-html="footer.html"></div>
   </div>
+  <script>
+    function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            elmnt.removeAttribute("w3-include-html");
+            includeHTML();
+            }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        return;
+        }
+    }
+    }
+    includeHTML();
+  </script>
 </body>
 </html>

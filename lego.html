@@ -158,11 +158,35 @@
 	    <p><figure><img src="https://digitalgdp.b-cdn.net/gdp/IMG_0252.jpeg" width="100%" alt="A detailed LEGO<sup>&reg;</sup> model of the Concorde supersonic airliner is displayed on a wooden table. The model is predominantly white with a red stripe running along its fuselage and a blue tail fin featuring the word 'Concorde.' The nose is in a downward position, and the landing gear is extended. In the background, there is another LEGO<sup>&reg;</sup> model of Notre-Dame Cathedral in Paris, placed on a black base."><figcaption>LEGO<sup>&reg;</sup> Concorde</figcaption></figure></p>
 	    <p><figure><img style="padding-right: 5px" src="https://digitalgdp.b-cdn.net/gdp/IMG_0251.jpeg" height="" width="100%" alt="A detailed LEGO<sup>&reg;</sup> model of the Notre-Dame Cathedral in Paris, France, showcasing its intricate Gothic architecture, including the rose window, spire, and twin towers, placed on a wooden table in a softly lit room."><figcaption>LEGO<sup>&reg;</sup> Notre-Dame de Paris</figcaption></figure></p>
 		  <p><figure><img src="https://digitalgdp.b-cdn.net/gdp/IMG_0342.jpeg" width="100%" alt="A dark wooden desk with an attached bookshelf, displaying various LEGO<sup>&reg;</sup> architectural models, including the Concorde, the Notre-Dame Cathedral, the Great Pyramid of Giza, the White House, and other famous landmarks. A red lamp with a decorative shade sits on the right side of the desk, and a model airplane wing is partially visible above the bookshelf. The setting appears to be an office or study room."><figcaption>My full LEGO<sup>&reg;</sup> collection lives in my office at school because my wife does not find them worthy of home decor.</figcaption></figure></p>
-<!-- BELOW SHOULD BE STANDARD -->
+<!-- DO NOT EDIT BELOW -->
     </main>
-    <footer class="small pt-5 my-5 text-body-secondary border-top">
-      &copy; 2001-<script>document.write(new Date().getFullYear());</script> by Gregory Pittman &middot; <a href="https://social.lol/@gdp" title="Mastodon" title="Mastodon"><i class="fa-brands fa-mastodon"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://bsky.app/profile/gpittman.bsky.social" title="Bluesky"><i class="fa-brands fa-bluesky"></i></a><br><a href="https://gregorypittman.net/colophon.html" title="Colophon">Colophon</a> &middot; Verification: <a href="https://proven.lol/35cc5c" title="Verification">proven35cc5c</a>
-    </footer>
+    <!-- Include footer -->
+    <div w3-include-html="footer.html"></div>
   </div>
+  <script>
+    function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            elmnt.removeAttribute("w3-include-html");
+            includeHTML();
+            }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        return;
+        }
+    }
+    }
+    includeHTML();
+  </script>
 </body>
 </html>
