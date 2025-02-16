@@ -1,14 +1,30 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
+<head>
+    <meta name="robots" content="noindex">
+    <meta name="fediverse:creator" content="@gdp@social.lol">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Gregory Pittman">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5e04e47d7c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.bunny.net/css?family=roboto-slab:400,700" rel="stylesheet">
+    <link rel="canonical" href="https://gregorypittman.net/">
+    <link rel="icon" type="image/x-icon" href="https://digitalgdp.b-cdn.net/GP.jpg">
+    <link rel="preload" as="script" href="https://kit.fontawesome.com/5e04e47d7c.js">
+    <link rel="me" href="https://social.lol/@gdp">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://gregorypittman.net/css/style.css" rel="stylesheet">
+    <title>Gregory Pittman</title>
 
-<!-- Include Header A -->
-<div w3-include-html="heada.html"></div>
-
-<title>Gregory Pittman</title>
-
-<!-- Include Header B -->
-<div w3-include-html="headb.html"></div>
-
+    <!-- Include header -->
+    <div w3-include-html="header.html"></div>
+    <main>
+<!-- DO NOT EDIT ABOVE -->
       <h2 class="text-body-emphasis">Latest Update</h2>
       <p class="fs-5 col-md-12"><script src="https://status.lol/gdp.js?time&link&fluent&pretty"></script></p>
 
@@ -32,6 +48,36 @@
           <p>An educator since 2001, Gregory Pittman is currently a middle school administrator in South Carolina. He holds certifications in choral music education and educational administration and supervision. As a choral director in South Carolina and Texas, his choirs consistently earned Superior ratings in adjudicated festivals and his students routinely earned acceptance into auditioned honor choirs throughout the Southeast.</p>
           <p><a href="/bio.html" title="Gregory Pittman Bio">Read more &rarr;</a></p>
         </div>
-
-<!-- Include footer -->
-<div w3-include-html="footer.html"></div>
+      </div>
+ <!-- DO NOT EDIT BELOW -->
+   </main>
+      <!-- Include footer -->
+      <div w3-include-html="footer.html"></div>
+    </div>
+    <script>
+        function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+                }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+            }
+        }
+        }
+        includeHTML();
+    </script>
+</body>
+</html>
