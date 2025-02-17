@@ -102,4 +102,5 @@
 
     img {
         padding: 5px 5px 5px 5px;
+        max-width: 100%;
     }
