@@ -23,8 +23,40 @@
 </head>
 <body>
   <div class="col-lg-8 mx-auto p-4 py-md-5">
-    <!-- Include header -->
-    <div w3-include-html="header.html"></div>
+    <header class="pb-4">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <h1 class="text-body-emphasis"><a class="navbar-brand" href="https://gregorypittman.net/" title="Gregory Pittman">
+                <img style="display:inline-block" src="https://digitalgdp.b-cdn.net/GP.jpg" alt="Logo" height="50" width="50"> Gregory Pittman</a>
+            </h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="fa-ul navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gregorypittman.net/" title="Home"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gregorypittman.net/socials.html" title="Gregory Pittman on Social Media"><i class="fa-duotone fa-solid fa-handshake"></i> Socials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gregorypittman.net/uses/index.html" title="Gregory Pittman Uses&hellip;"><i class="fa-solid fa-toolbox"></i> Uses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gregorypittman.net/now/index.html" title="Gregory Pittman Now"><i class="fa-duotone fa-regular fa-calendar-day"></i> Now</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="https://www.flickr.com/photos/gdpittman/" title="My Photography"><i class="fa-brands fa-flickr"></i>  Photography</a>
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gregorypittman.net/contact.html" title="Contact Gregory Pittman"><i class="fa-solid fa-at"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+    </header>
     <main>
 <!-- ABOVE SHOULD BE STANDARD -->
       <h2 class="text-body-emphasis">My LEGO<sup>&reg;</sup> Collection</h2>
@@ -34,33 +66,13 @@
 		  <p><figure><img loading="lazy" src="https://digitalgdp.b-cdn.net/gdp/IMG_0342.jpeg" width="100%" alt="A dark wooden desk with an attached bookshelf, displaying various LEGO<sup>&reg;</sup> architectural models, including the Concorde, the Notre-Dame Cathedral, the Great Pyramid of Giza, the White House, and other famous landmarks. A red lamp with a decorative shade sits on the right side of the desk, and a model airplane wing is partially visible above the bookshelf. The setting appears to be an office or study room."><figcaption>My full LEGO<sup>&reg;</sup> collection lives in my office at school because my wife does not find them worthy of home decor.</figcaption></figure></p>
 <!-- DO NOT EDIT BELOW -->
     </main>
-    <!-- Include footer -->
-    <div w3-include-html="footer.html"></div>
+    <footer class="small pt-5 my-5 text-body-secondary border-top">
+      <p>&copy; 2001-<script type="text/javascript">var year = new Date();document.write(year.getFullYear());</script> by Gregory Pittman &middot; 
+      <a href="https://social.lol/@gdp" title="Mastodon"><i class="fa-brands fa-mastodon"></i></a>&nbsp;&nbsp;&nbsp;
+      <a href="https://bsky.app/profile/gpittman.bsky.social" title="Bluesky"><i class="fa-brands fa-bluesky"></i></a><br>
+      <a href="https://gregorypittman.net/colophon.html" title="Colophon">Colophon</a> &middot; 
+      Verification: <a href="https://proven.lol/35cc5c" title="Verification">proven35cc5c</a></p>
+    </footer>
   </div>
-  <script>
-    function includeHTML() {
-    var z, i, elmnt, file, xhttp;
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        file = elmnt.getAttribute("w3-include-html");
-        if (file) {
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4) {
-            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-            elmnt.removeAttribute("w3-include-html");
-            includeHTML();
-            }
-        }
-        xhttp.open("GET", file, true);
-        xhttp.send();
-        return;
-        }
-    }
-    }
-    includeHTML();
-  </script>
 </body>
 </html>
