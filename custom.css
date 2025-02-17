@@ -100,6 +100,11 @@
     font-family: 'Roboto Slab', serif;
     }
 
+    figure {
+        display: flex;
+        justify-content: center;
+    }
+
     figcaption {
         text-align: center;
     }
