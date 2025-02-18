@@ -80,6 +80,10 @@
         font-size: 1.1em;
     }
 
+    .navbar {
+        padding-left: 0 !important;
+    }
+
     .fa-li {
     color: #bc8743;
     }
